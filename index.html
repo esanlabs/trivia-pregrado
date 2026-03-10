@@ -88,28 +88,8 @@
             }
         },
         resetGame: function() { 
-            // REINICIO DE ESTADOS
-            state.qIndex = 0;
-            state.score = 0;
-            state.isAnswered = false;
-
-            // ELIMINAR CONFETI SI EXISTE
-            state.confettiElements.forEach(el => el.parentNode.removeChild(el));
-            state.confettiElements = [];
-
-            // OCULTAR PANTALLA FINAL Y MOSTRAR BIENVENIDA
-            this.endUI.setAttribute('visible', false);
-            this.endUI.setAttribute('position', '0 -999 0');
-            
-            this.menuLang.setAttribute('visible', true);
-            this.menuLang.setAttribute('position', '0 1.6 -4');
-            this.menuLang.setAttribute('scale', '1 1 1');
-
-            // ASEGURAR QUE EL CIELO ESTÁ VISIBLE Y EL VIDEO OCULTO PARA EL PRÓXIMO INICIO
-            this.staticSky.setAttribute('visible', true);
-            this.videoSphere.setAttribute('visible', false);
-            this.videoEl.pause();
-            this.videoEl.currentTime = 0;
+            // REDIRECCIÓN AL LINK SOLICITADO
+            window.location.href = "https://esanlabs.github.io/Trv-pregrado/";
         },
         selectRandomQuestions: function() {
             let allQuestions = [...DATABASE[state.lang].preguntas];
@@ -149,7 +129,6 @@
             }, 3000); 
         },
         startSnow: function() {
-            if(state.snowElements.length > 0) return; // No duplicar nieve
             for(let i=0; i<200; i++) {
                 let flake = document.createElement('a-entity');
                 flake.setAttribute('geometry', 'primitive: sphere; radius: 0.03'); 
