@@ -32,7 +32,17 @@
                 { q: "¿Cuál es el principal objetivo de los líderes formados aquí?", ops: ["Éxito económico personal", "Ser agentes de cambio", "Expandir negocios", "Innovar en tecnología"], ans: 1 },
                 { q: "¿Qué aspecto renovó la institución recientemente?", ops: ["Su campus principal", "Su plan de estudios", "Su identidad gráfica", "Su nombre institucional"], ans: 2 },
                 { q: "¿Qué simboliza el nuevo logo de la institución?", ops: ["Expansión internacional", "Evolución y adaptación", "Historia militar", "Enfoque tecnológico"], ans: 1 },
-                { q: "¿Qué mensaje transmite la campaña junto con el nuevo logo?", ops: ["Compromiso con la tradición", "Compromiso con la excelencia", "Internacionalización", "Digitalización"], ans: 1 }
+                { q: "¿Qué mensaje transmite la campaña junto con el nuevo logo?", ops: ["Compromiso con la tradición", "Compromiso con la excelencia", "Internacionalización", "Digitalización"], ans: 1 },
+                { q: "¿Cuántas facultades de pregrado tiene actualmente la Universidad ESAN?", ops: ["2 facultades", "3 facultades", "4 facultades", "5 facultades"], ans: 1 },
+                { q: "¿Cómo se llama el centro de información y biblioteca de ESAN?", ops: ["Centrum", "ESAN Data", "Biblioteca ESAN", "Centro de Documentación"], ans: 2 },
+                { q: "¿Qué significa la sigla ESAN originalmente?", ops: ["Escuela de Admin. de Negocios", "Escuela Superior de Admin.", "Estudios Superiores de Negocios", "Espacio de Soluciones de Negocio"], ans: 0 },
+                { q: "¿Cuál es la acreditación internacional más importante que posee ESAN?", ops: ["AACSB", "ISO 9001", "UNESCO", "Green Power"], ans: 0 },
+                { q: "¿En qué distrito de Lima se encuentra el campus principal?", ops: ["San Isidro", "Santiago de Surco", "La Molina", "Miraflores"], ans: 1 },
+                { q: "¿Qué es el FabLab ESAN?", ops: ["Un laboratorio de finanzas", "Un laboratorio de fabricación", "Un centro de idiomas", "Un gimnasio"], ans: 1 },
+                { q: "¿Cuál es el nombre del auditorio principal del campus?", ops: ["Auditorio Stanford", "Auditorio Central", "Auditorio Juan XXIII", "Auditorio del Saber"], ans: 1 },
+                { q: "¿Qué carrera pertenece a la facultad de ingeniería?", ops: ["Administración", "Ingeniería Industrial", "Derecho", "Psicología"], ans: 1 },
+                { q: "ESAN fue la primera escuela de postgrado de negocios creada en:", ops: ["América Latina", "Sudamérica", "El mundo hispano", "El Perú"], ans: 2 },
+                { q: "¿Qué programa de ESAN es pionero en el país?", ops: ["El MBA", "Medicina", "Artes Plásticas", "Arquitectura"], ans: 0 }
             ]
         }
       };
@@ -88,7 +98,6 @@
             }
         },
         resetGame: function() { 
-            // REDIRECCIÓN AL LINK SOLICITADO
             window.location.href = "https://esanlabs.github.io/Trv-pregrado/";
         },
         selectRandomQuestions: function() {
@@ -97,7 +106,8 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
             }
-            state.activeQuestions = allQuestions.slice(0, 3);
+            // MODIFICADO A 5 PREGUNTAS
+            state.activeQuestions = allQuestions.slice(0, 5);
         },
         setLang: function(l) {
             state.lang = l;
@@ -311,7 +321,7 @@
             <a-entity geometry="primitive: plane; width: 5; height: 5.5" material="color: white; shader: flat" position="0 0 -0.1"></a-entity>
             <a-circle src="#logo" position="0 1.8 0.1" radius="0.75" material="shader: flat"></a-circle>
             <a-entity id="txt-bienvenida" mixin="txt-black" position="0 0.6 0.1" troika-text="value: BIENVENIDO; fontSize: 0.5; color: #B61F25; outlineWidth: 0.005"></a-entity>
-            <a-entity id="txt-subtitulo" mixin="txt-black" position="0 0 0.1" troika-text="value: SEMANA UNIVERSITARIA ESAN; fontSize: 0.28"></a-entity>
+            <a-entity id="txt-subtitulo" mixin="txt-black" position="0 0 0.1" troika-text="value: SEMANA INTERNACIONAL ESAN; fontSize: 0.28"></a-entity>
             <a-entity id="txt-instr" mixin="txt-black" position="0 -0.5 0.1" troika-text="value: El conocimiento habla, pero la sabiduría escucha; fontSize: 0.18; color: #555"></a-entity>
             <a-entity id="txt-credits" mixin="txt-black" position="0 -0.9 0.1" troika-text="value: Desarrollado por EsanLabs; fontSize: 0.15; color: #888; font-style: italic"></a-entity>
             <a-entity position="0 -1.5 0">
@@ -326,7 +336,7 @@
       <a-entity id="ui-juego" visible="false">
         <a-entity position="0 2.2 0">
             <a-entity geometry="primitive: box; width: 2; height: 0.5; depth: 0.05" material="color: #B61F25"></a-entity>
-            <a-entity id="txt-contador" mixin="txt-white" position="0 0 0.06" troika-text="value: 1 / 3"></a-entity>
+            <a-entity id="txt-contador" mixin="txt-white" position="0 0 0.06" troika-text="value: 1 / 5"></a-entity>
         </a-entity>
         <a-entity geometry="primitive: plane; width: 6; height: 1.5" material="color: white; shader: flat" position="0 1.2 -0.1"></a-entity>
         <a-entity id="txt-pregunta" mixin="txt-black" position="0 1.2 0.06" troika-text="fontSize: 0.2; value: Cargando..."></a-entity>
@@ -346,7 +356,7 @@
         <a-entity geometry="primitive: plane; width: 5; height: 4" material="color: white; shader: flat" position="0 0.5 -0.1"></a-entity>
         <a-entity id="end-content-wrapper" position="0 0 0">
             <a-image id="img-resultado" position="0 1.2 0.2" width="1.8" height="2.5"></a-image>
-            <a-entity id="txt-score-final" mixin="txt-black" position="0 -0.3 0.2" troika-text="color: #4CAF50; fontSize: 0.4; value: 0 / 3"></a-entity>
+            <a-entity id="txt-score-final" mixin="txt-black" position="0 -0.3 0.2" troika-text="color: #4CAF50; fontSize: 0.4; value: 0 / 5"></a-entity>
             <a-entity position="0 -1.0 0.2">
                 <a-box class="clickable" btn-action="type: restart; val: 0" color="#B61F25" width="2.5" height="0.6" depth="0.05"></a-box>
                 <a-entity id="txt-restart" mixin="txt-white" position="0 0 0.06" troika-text="value: VOLVER AL MENÚ PRINCIPAL; fontSize: 0.18"></a-entity>
