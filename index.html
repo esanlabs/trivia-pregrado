@@ -312,8 +312,8 @@
         <a-camera position="0 1.6 0" look-controls="pointerLockEnabled: false">
             <a-entity id="black-fade" geometry="primitive: sphere; radius: 0.1; segmentsWidth: 8; segmentsHeight: 8" material="color: black; side: double; opacity: 0; transparent: true; shader: flat" visible="false" position="0 0 0"></a-entity>
         </a-camera>
-        <a-entity hand-controls="hand: right" laser-controls="hand: right" raycaster="objects: .clickable; far: 10; lineColor: #B61F25"></a-entity>
-        <a-entity hand-controls="hand: left"></a-entity>
+        <a-entity laser-controls="hand: right" raycaster="objects: .clickable; far: 10; lineColor: #B61F25"></a-entity>
+        <a-entity laser-controls="hand: left" raycaster="objects: none; far: 0"></a-entity>
       </a-entity>
 
       <a-entity id="menu-idioma">
@@ -366,6 +366,7 @@
     </a-scene>
   </body>
 </html>
+
 
 
 
