@@ -295,7 +295,7 @@
 
         <a-mixin id="btn-red" geometry="primitive: box; depth: 0.05; height: 0.5; width: 2.5" material="color: #B61F25"></a-mixin>
         <a-mixin id="txt-black" troika-text="align: center; color: #000; fontSize: 0.25; maxWidth: 4.8; outlineWidth: 0.0"></a-mixin>
-        <a-mixin id="txt-white" troika-text="align: center; color: #FFF; fontSize: 0.16; maxWidth: 4.5; outlineWidth: 0.0"></a-mixin>
+        <a-mixin id="txt-white" troika-text="align: center; color: #FFF; fontSize: 0.12; maxWidth: 4.5; outlineWidth: 0.0"></a-mixin>
       </a-assets>
 
       <a-entity id="bg-music" sound="src: #src-music; volume: 1.0; loop: true"></a-entity>
@@ -320,7 +320,7 @@
         <a-entity animation="property: position; from: 0 0 0; to: 0 0.05 0; dir: alternate; dur: 3000; loop: true">
             <a-entity geometry="primitive: plane; width: 5; height: 5.5" material="color: white; shader: flat" position="0 0 -0.1"></a-entity>
             <a-circle src="#logo" position="0 1.8 0.1" radius="0.75" material="shader: flat"></a-circle>
-            <a-entity id="txt-bienvenida" mixin="txt-black" position="0 0.6 0.1" troika-text="value: BIENVENIDO; fontSize: 0.5; color: #B61F25; outlineWidth: 0.005"></a-entity>
+            <a-entity id="txt-bienvenida" mixin="txt-black" position="0 0.6 0.1" troika-text="value: BIENVENIDO; fontSize: 0.5; color: #E3173E; outlineWidth: 0.005"></a-entity>
             <a-entity id="txt-subtitulo" mixin="txt-black" position="0 0 0.1" troika-text="value: SEMANA INTERNACIONAL ESAN; fontSize: 0.28"></a-entity>
             <a-entity id="txt-instr" mixin="txt-black" position="0 -0.5 0.1" troika-text="value: El conocimiento habla, pero la sabiduría escucha; fontSize: 0.18; color: #555"></a-entity>
             <a-entity id="txt-credits" mixin="txt-black" position="0 -0.9 0.1" troika-text="value: Desarrollado por EsanLabs; fontSize: 0.15; color: #888; font-style: italic"></a-entity>
@@ -366,3 +366,4 @@
     </a-scene>
   </body>
 </html>
+
